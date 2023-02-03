@@ -244,8 +244,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f49c8e1b2e811ef4c92a2ed9ab088928, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  natureMin: 3
-  natureMax: 4
+  natureMin: 1
+  natureMax: 7
   natureStats:
     keys:
     - Crowds
@@ -267,7 +267,7 @@ MonoBehaviour:
       genetic stock "somewhat pure".
     - Lacks the stomach enzymes to process protein, and the taste buds to care.
   nurtureMin: 1
-  nurtureMax: 5
+  nurtureMax: 7
   nurtureStats:
     keys:
     - Crowds

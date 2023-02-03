@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class StatGeneration : MonoBehaviour
 {
-    public int natureMin = 0;  // Minimum number of nature stats     Note: This is inclusive
+    public int natureMin = 1;  // Minimum number of nature stats     Note: This is inclusive
     public int natureMax = 1;  // Maximum number of nature stats     Note: This is inclusive
     // Dictionary containing all the possible nature stats and there description
     public UDictionary<string, string> natureStats = new UDictionary<string, string>();
 
 
-    public int nurtureMin = 0;  // Minimum number of nurture stats     Note: This is inclusive
+    public int nurtureMin = 1;  // Minimum number of nurture stats     Note: This is inclusive
     public int nurtureMax = 1;  // Maximum number of nurture stats     Note: This is inclusive
     // Dictionary containing all the possible nurture stats and there description
     public UDictionary<string, string> nurtureStats = new UDictionary<string, string>();
@@ -56,8 +56,6 @@ public class StatGeneration : MonoBehaviour
         List<string> stats = generateNurtureStats();
         Debug.Log("---- Nurture Stats ----");
         foreach (string stat in stats) { Debug.Log(stat); }
-        Debug.Log("\n");
-        Debug.Log("\n");
         stats = generateNatureStats();
         Debug.Log("---- Nature Stats ----");
         foreach (string stat in stats) { Debug.Log(stat); }
