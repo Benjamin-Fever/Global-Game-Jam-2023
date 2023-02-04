@@ -18,6 +18,14 @@ public class Alien : MonoBehaviour
     private int numStyles;
     public int imageIndex; // Which alien sprite was picked.
 
+    //Previous values so there is no repeated values in new aliens
+    public string previousFirstName;
+    public string previousLastName;
+    public List<StyleDict.Style> previousStyles;
+    public int previousImageIndex;
+    private bool firstAlien;
+
+
     //Needs to be filled in editor
     public List<Sprite> images;
 
@@ -30,6 +38,7 @@ public class Alien : MonoBehaviour
     void Start()
     {
         numStyles = 1;
+        firstAlien = true;
         Generate();
     }
 
@@ -47,15 +56,32 @@ public class Alien : MonoBehaviour
         int randLastName = Mathf.RoundToInt(Random.value * (StyleDict.lastNames.Count - 1));
         firstName = StyleDict.firstNames[randFirstName];
         lastName = StyleDict.lastNames[randLastName];
+
+        //Remove repeats
+        while (firstName == previousFirstName)
+        {
+            firstName = StyleDict.firstNames[randFirstName];
+        }
+        while (lastName == previousLastName)
+        {
+            lastName = StyleDict.lastNames[randLastName];
+        }
+
         alienName = firstName + " " + lastName;
         namePlate.nameTag.text = alienName;
 
         //GeneratePicture
         int randImage = Mathf.RoundToInt(Random.value * (images.Count - 1));
+
+        //Remove repeats
+        while (randImage == previousImageIndex)
+        {
+            randImage = Mathf.RoundToInt(Random.value * (images.Count - 1));
+        }
         imageIndex = randImage;
         alienImage.sprite = images[randImage];
         alienImage.SetNativeSize();
-       
+
 
         selectedStyles = new List<StyleDict.Style>();
 
@@ -68,7 +94,7 @@ public class Alien : MonoBehaviour
             {
                 int randStyle = Mathf.RoundToInt(Random.value * (StyleDict.alienStyles.Count - 1));
                 StyleDict.Style selectedStyle = StyleDict.alienStyles.Values.ToList()[randStyle];
-                while (selectedStyles.Contains(selectedStyle))
+                while (selectedStyles.Contains(selectedStyle) || previousStyles.Contains(selectedStyle))
                 {
                     randStyle = Mathf.RoundToInt(Random.value * (StyleDict.alienStyles.Count - 1));
                     selectedStyle = StyleDict.alienStyles.Values.ToList()[randStyle];
@@ -88,7 +114,7 @@ public class Alien : MonoBehaviour
             {
                 int randStyle = Mathf.RoundToInt(Random.value * (StyleDict.speciesStyles.Count - 1));
                 StyleDict.Style selectedStyle = StyleDict.speciesStyles.Values.ToList()[randStyle];
-                while (selectedStyles.Contains(selectedStyle))
+                while (selectedStyles.Contains(selectedStyle) || previousStyles.Contains(selectedStyle))
                 {
                     randStyle = Mathf.RoundToInt(Random.value * (StyleDict.alienStyles.Count - 1));
                     selectedStyle = StyleDict.alienStyles.Values.ToList()[randStyle];
@@ -99,5 +125,12 @@ public class Alien : MonoBehaviour
             }
         }
         alienLaunch.alien = this;
+        if (firstAlien)
+        {
+            previousFirstName = firstName;
+            previousLastName = lastName;
+            previousStyles = selectedStyles;
+            previousImageIndex = imageIndex;
+        }
     }
 }
