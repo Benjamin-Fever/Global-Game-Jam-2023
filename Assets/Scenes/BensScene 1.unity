@@ -1375,7 +1375,7 @@ MonoBehaviour:
   planetStyleLabel: {fileID: 20667005}
   PlanetImage: {fileID: 0}
   styleRangeMin: 2
-  styleRangeMax: 6
+  styleRangeMax: 1
   planetNamePrefix:
   - pre1
   - pre2

@@ -11,6 +11,7 @@ public class StyleDict : MonoBehaviour
     public static Dictionary<string, Style> planetStyles;
     public static List<string> firstNames;
     public static List<string> lastNames;
+    
 
     public enum Style
     {
