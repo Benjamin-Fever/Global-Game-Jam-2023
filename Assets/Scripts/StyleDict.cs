@@ -39,7 +39,7 @@ public class StyleDict : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void initStyles()
@@ -246,6 +246,5 @@ public class StyleDict : MonoBehaviour
             " V",
             " VI",
         };
-}
-    
+
 }
