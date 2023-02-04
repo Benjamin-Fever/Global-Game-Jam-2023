@@ -62,17 +62,26 @@ public class alienLaunch : MonoBehaviour
                 finishedTimers.Add(i);
             }
         }
-
+        
         //Remove entries whos timers have run out
-        int offset = 0;
-        foreach(int i in finishedTimers)
+        for(int i = 0; i < finishedTimers.Count; i++)
         {
-            offset++;
-            mailTimers.RemoveAt(i - offset);
-            imageIndexs.RemoveAt(i - offset);
-            happyValues.RemoveAt(i - offset);
-            alienNames.RemoveAt(i - offset);
-            planetNames.RemoveAt(i - offset);
+            int index = finishedTimers[i];
+            mailTimers.RemoveAt(index);
+            imageIndexs.RemoveAt(index);
+            happyValues.RemoveAt(index);
+            alienNames.RemoveAt(index);
+            planetNames.RemoveAt(index);
+
+            //Adjusts timers in the off chance that multiple timers finish at the same time
+            for(int j = i + 1; j < finishedTimers.Count; j++)
+            {
+                if (finishedTimers[j] > finishedTimers[i])
+                {
+                    finishedTimers[j]--;
+                }
+            }
+
         }
     }
 }
