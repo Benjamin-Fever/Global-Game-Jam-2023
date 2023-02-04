@@ -51,7 +51,7 @@ MonoBehaviour:
   closeWindowSFX: {fileID: 8300000, guid: 6eca7b109050a2646aa2580b951e860c, type: 3}
   emailNotificationSFX: {fileID: 8300000, guid: c92741d25ee74d542b328772c75f8b63, type: 3}
   launchAlienSFX: {fileID: 8300000, guid: d29f990c59f15d94a941ad18d804d86c, type: 3}
-  flameEmailSFX: {fileID: 8300000, guid: d29f990c59f15d94a941ad18d804d86c, type: 3}
+  flameEmailSFX: {fileID: 8300000, guid: 8b5fb96f1604faf4ab9cbe290705cf55, type: 3}
 --- !u!1 &1488901488131997294
 GameObject:
   m_ObjectHideFlags: 0
