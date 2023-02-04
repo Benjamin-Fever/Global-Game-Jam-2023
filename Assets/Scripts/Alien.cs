@@ -96,5 +96,6 @@ public class Alien : MonoBehaviour
                 alienInfo.speciesStyles.text += StyleDict.speciesStyles.Keys.ToList()[randStyle] + "\n\n";
             }
         }
+        
     }
 }
