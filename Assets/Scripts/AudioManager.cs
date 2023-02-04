@@ -15,6 +15,16 @@ public class AudioManager : MonoBehaviour
     public AudioClip flameEmailSFX;
 
 
+    private void Start()
+    {
+        AudioController.SFXPlayer = SFXPlayer;
+        AudioController.leftClickSFX = leftClickSFX;
+        AudioController.closeWindowSFX = closeWindowSFX;
+        AudioController.emailNotificationSFX = emailNotificationSFX;
+        AudioController.launchAlienSFX = launchAlienSFX;
+        AudioController.flameEmailSFX = flameEmailSFX;
+     }
+
     public void leftClick()
     {
         SFXPlayer.Stop();
