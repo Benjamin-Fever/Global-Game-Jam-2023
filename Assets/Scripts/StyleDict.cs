@@ -14,6 +14,7 @@ public class StyleDict : MonoBehaviour
     public static List<string> planetPrefix;
     public static List<string> planetSuffix;
 
+
     public enum Style
     {
         Crowds,
@@ -38,7 +39,7 @@ public class StyleDict : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void initStyles()
@@ -50,10 +51,19 @@ public class StyleDict : MonoBehaviour
             {"I once ate 5572 of those crunchy triangles they serve in bars!", Style.Mexican },
             {"I own 34 sets of pajamas. One for each of my moods.", Style.Pajamas },
             {"Food's all about texture for me. I'm looking for that maximum crunch! Granite, limestone, they're all delicious.", Style.Rocks },
-            {"And I've been wrong, I've been down. Been to the bottom of every bottle.", Style.NickelBack },
+            {"'And I've been wrong, I've been down. Been to the bottom of every bottle.'", Style.NickelBack },
             {"I never eat anything that moves on its own.", Style.Herbivore },
             {"I love wearing ponchos and think everyday is Taco Tuesday.", Style.Mexican },
-            {"I ate my primary school teacher. She was a grape.", Style.Herbivore }
+            {"I ate my primary school teacher. She was a grape.", Style.Herbivore },
+            {"Uh... I don't know what to say. I'm shy.", Style.EmptySpace },
+            {"We are many. We like to mingle.", Style.Crowds },
+            {"I have pajamas for any occasion. Party pjs, wedding pajamas, funeral pajamas. You name it, I've got it!", Style.Pajamas },
+            {"I've been sleeping in a hammock. It's killing my back. I need to sleep on a hard and rough surface.", Style.Rocks },
+            {"'And this is how you remind me of what I really am.'", Style.NickelBack },
+            {"'These five words in my head scream, 'Are we havin' fun yet'?'", Style.NickelBack },
+            {"'It's not like you to say sorry, I was waitin' on a different story.'", Style.NickelBack },
+            {"'This time I'm mistaken, for handing you a heart worth breaking.'", Style.NickelBack },
+            {"'Never made it as a wise man. I couldn't cut it as a poor man stealing.'", Style.NickelBack }
         };
 
         speciesStyles = new Dictionary<string, Style>()
@@ -64,7 +74,21 @@ public class StyleDict : MonoBehaviour
             {"Creature of comfort that is not comfortable leaving the house. The ultimate homebody.", Style.Pajamas },
             {"Parents hatch their eggs in craters and let their young play with rocks until maturity.", Style.Rocks },
             {"Descendents from the original Chad. Generations of inbreeding have kept the genetic stock 'somewhat pure'.", Style.NickelBack },
-            {"Lacks the stomach enzymes to process protein, and the taste buds to care.", Style.Herbivore }
+            {"Lacks the stomach enzymes to process protein, and the taste buds to care.", Style.Herbivore },
+            {"A wolf wearing sheep's clothes. Quite literally. The softness and comfort of wool cannot be matched.", Style.Pajamas },
+            {"Born in a sardine tin can. This species is used to tight spaces.", Style.Crowds },
+            {"Only meets with others of its kind during a mating season every 78 years. Quite happy by itself otherwise.", Style.EmptySpace },
+            {"Rubs skin with guacamole to protect against sun burns.", Style.Mexican },
+            {"Actively seeks our polyspecific, poly-amorous relationships. Loves plants more than you think.", Style.Herbivore },
+            {"Secretes ooze when it touches the ground. Prefers sharp and rough terrain.", Style.Rocks },
+            {"Has no auditory sense. Thankfully.", Style.NickelBack },
+            {"Each family has two thousand siblings living their awkward high school years in the same small town.", Style.Crowds },
+            {"Having a two-minute memory means growing up an orphan and not keeping many relationships.", Style.EmptySpace },
+            {"Ran out of fossil fuels and resorted to burning tequila for energy.", Style.Mexican },
+            {"Always in a state of 'squish'. Needs a lot of fabric to soak up after themselves.", Style.Pajamas },
+            {"Nails never stop growing and needs to keep them short by clawing and scratching all the time.", Style.Rocks },
+            {"Brain exists in a protected, out-of-body environment. Dances really badly because of the lag.", Style.NickelBack },
+            {"Breathes in carbon dioxide and excretes photons.", Style.Herbivore }
         };
 
         planetStyles = new Dictionary<string, Style>()
@@ -89,11 +113,33 @@ public class StyleDict : MonoBehaviour
             {"The native population are similar to sentient fleece. They are kind and love to snuggle.", Style.Pajamas },
             {"Surrounded by an asteroid field, mining is the most prominent industry.", Style.Rocks },
             {"Ancient aliens carvings were found in caves. When the wind passes through, it sounds like sad rock music from Earth, circa 2000.", Style.NickelBack },
-            {"Home of the Endless Lettuce. Nothing has ever managed to consume more lettuce than has grown in the same time.", Style.Herbivore }
+            {"Home of the Endless Lettuce. Nothing has ever managed to consume more lettuce than has grown in the same time.", Style.Herbivore },
+            {"Known as the moshpit of the Andromeda Nebulae. Showering optional.", Style.Crowds }
         };
 
         firstNames = new List<string>()
         {
+            "Crispy",
+            "Timbuktu",
+            "Young",
+            "Monkey",
+            "Pizzaface",
+            "Aoife",
+            "Rugru",
+            "James",
+            "Olivier",
+            "Ben",
+            "AJ",
+            "Clementine",
+            "Superius",
+            "Skux",
+            "Toots",
+            "Gee",
+            "Muffin",
+            "Polax",
+            "Scruff",
+            "McMac",
+            "Grand",
             "Grimbul",
             "Wendy",
             "Slugrup",
@@ -106,6 +152,27 @@ public class StyleDict : MonoBehaviour
 
         lastNames = new List<string>()
         {
+            "Spaghetti",
+            "Borneo",
+            "Zanzibar",
+            "Chone",
+            "Jr.",
+            "McGee",
+            "Bond",
+            "Muose",
+            "Sr.",
+            "Clone",
+            "Chrun",
+            "Penguin",
+            "O'Dea",
+            "Fever",
+            "Ngo",
+            "Zeus",
+            "Saxophone",
+            "Ten",
+            "Tennis",
+            "Afgard",
+            "Ladson",
             "Gumptur",
             "Rigbog",
             "Portund",
@@ -119,13 +186,66 @@ public class StyleDict : MonoBehaviour
 
         planetPrefix = new List<string>()
         {
-            "PlanetPrefix1",
+            "Blue",
+            "Sticky",
+            "Epsilon",
+            "Two",
+            "Emily",
+            "Orangina",
+            "Knuckle",
+            "Scrote",
+            "Bonce",
+            "Wok",
+            "Poland",
+            "Guf",
+            "Horbo",
+            "Komon",
+            "Tyolin",
+            "Defko",
+            "Chinester",
+            "Bebobibu",
+            "Aaaaaaaaaa",
+            "Hoomon",
+            "Snorzzles",
+            "Crustaceous",
+            "Wrat",
+            "Blub",
+            "Cronch",
+            "Tigu",
+            "Jhohani",
+            "Welq",
+            "Nmo",
+            "Gasfadil",
+            "Twin",
+            "Fats",
+            "Walrii",
+            "Trampo",
+            "Linus",
+            "Bova",
+            "Xolch",
+            "Quream",
+            "Lolpoppadom",
+            "Trigle",
+            "Kifjilo",
+            "Trudjno",
+            "Ljubo",
+            "Connie",
         };
 
         planetSuffix = new List<string>()
         {
-            "PlanetSufix1",
+            "",
+            "",
+            "",
+            "",
+            "",
+            " I",
+            " II",
+            " III",
+            " IV",
+            " V",
+            " VI",
         };
     }
-    
+
 }
