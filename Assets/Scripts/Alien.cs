@@ -53,17 +53,17 @@ public class Alien : MonoBehaviour
         //Generate random preferences.
         for(int i = 0; i < numStyles; i++)
         {
-            int randStyle = Mathf.RoundToInt(Random.value * (StyleDict.styles.Count - 1));
-            StyleDict.Style selectedStyle = StyleDict.styles.Values.ToList()[randStyle];
+            int randStyle = Mathf.RoundToInt(Random.value * (StyleDict.alienStyles.Count - 1));
+            StyleDict.Style selectedStyle = StyleDict.alienStyles.Values.ToList()[randStyle];
             while (selectedStyles.Contains(selectedStyle))
             {
-                randStyle = Mathf.RoundToInt(Random.value * (StyleDict.styles.Count - 1));
-                selectedStyle = StyleDict.styles.Values.ToList()[randStyle];
+                randStyle = Mathf.RoundToInt(Random.value * (StyleDict.alienStyles.Count - 1));
+                selectedStyle = StyleDict.alienStyles.Values.ToList()[randStyle];
             }
             selectedStyles.Add(selectedStyle);
 
 
-            detailsSection.styles.text += StyleDict.styles.Keys.ToList()[randStyle] + "\n\n";
+            detailsSection.styles.text += StyleDict.alienStyles.Keys.ToList()[randStyle] + "\n\n";
         }
         
     }

@@ -6,7 +6,9 @@ using UnityEngine.SceneManagement;
 public class StyleDict : MonoBehaviour
 {
 
-    public static Dictionary<string, Style> styles;
+    public static Dictionary<string, Style> alienStyles;
+    public static Dictionary<string, Style> planetStyles;
+    public static Dictionary<string, Style> speciesStyles;
     public enum Style
     {
         Crowds,
@@ -36,7 +38,7 @@ public class StyleDict : MonoBehaviour
 
     public void initStyles()
     {
-        styles = new Dictionary<string, Style>()
+        alienStyles = new Dictionary<string, Style>()
         {
             {"I really love talking in the cinema, or going to the bathroom with my friends. I can't bear to be alone.", Style.Crowds },
             {"I like to eat by myself, with something to read. My favourite date was when I got stood up at the steakhouse. Ah! I was in heaven.", Style.EmptySpace },
@@ -47,6 +49,17 @@ public class StyleDict : MonoBehaviour
             {"I never eat anything that moves on its own.", Style.Herbivore },
             {"I love wearing ponchos and think everyday is Taco Tuesday.", Style.Mexican }
         };
+
+        planetStyles = new Dictionary<string, Style>()
+        {
+
+        };
+
+        speciesStyles = new Dictionary<string, Style>()
+        {
+
+        };
+
     }
     
 }
