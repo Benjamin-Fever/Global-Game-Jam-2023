@@ -19,6 +19,7 @@ public class SpaceMail : MonoBehaviour
     public Button replyButton;
     public Button incinerateButton;
     public Button close;
+    public Button close2;
     public Button open;
     public CanvasGroup canvasGroup;
     
@@ -79,6 +80,10 @@ public class SpaceMail : MonoBehaviour
 
     void incinerate()
     {
+        if (!currentMail.Any())
+        {
+            return;
+        }
         currentMail.RemoveAt(position);
         if(position == currentMail.Count && position != 0)
         {
@@ -113,6 +118,7 @@ public class SpaceMail : MonoBehaviour
         incinerateButton.onClick.AddListener(incinerate);
         replyButton.onClick.AddListener(reply);
         close.onClick.AddListener(closeWindow);
+        close2.onClick.AddListener(closeWindow);
         open.onClick.AddListener(openWindow);
     }
 }
