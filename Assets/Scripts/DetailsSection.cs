@@ -5,6 +5,6 @@ using UnityEngine;
 
 public class DetailsSection : MonoBehaviour
 {
-    public TextMeshProUGUI styles;
-    public TextMeshProUGUI other;
+    public TextMeshProUGUI alienStyles;
+    public TextMeshProUGUI speciesStyles;
 }
