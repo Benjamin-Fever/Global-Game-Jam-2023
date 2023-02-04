@@ -5,7 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/JamesAlienUI.unity
+    guid: 10aaf8f7c79c50341aeaaea7d4b3e79a
+  - enabled: 1
+    path: Assets/Scenes/mergedScene.unity
+    guid: e5ef09d67d69f734db8d1431364df57d
+  - enabled: 1
+    path: Assets/Scenes/BensScene 1.unity
+    guid: 68cfbfd7198d90441bb1e21ea825d588
   m_configObjects: {}
