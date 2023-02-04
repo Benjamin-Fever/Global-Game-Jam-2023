@@ -22,6 +22,7 @@ public class SpaceMail : MonoBehaviour
     public Button close2;
     public Button open;
     public CanvasGroup canvasGroup;
+    public List<Sprite> alienSprites;
     
     // Start is called before the first frame update
     void Start()
@@ -38,6 +39,8 @@ public class SpaceMail : MonoBehaviour
     public void generateMail(string alienName, string planetName, int imageIndex, int happyValue)
     {
         currentMail.Insert(0, mailSprites[imageIndex]);
+        reloadProgress();
+        loadMailImage();
     }
 
     void loadMailImage()

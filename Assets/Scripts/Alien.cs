@@ -16,6 +16,7 @@ public class Alien : MonoBehaviour
     public List<StyleDict.Style> selectedStyles;
     public Image alienImage;
     private int numStyles;
+    public int imageIndex; // Which alien sprite was picked.
 
     //Needs to be filled in editor
     public List<Sprite> images;
@@ -51,6 +52,7 @@ public class Alien : MonoBehaviour
 
         //GeneratePicture
         int randImage = Mathf.RoundToInt(Random.value * (images.Count - 1));
+        imageIndex = randImage;
         alienImage.sprite = images[randImage];
         alienImage.SetNativeSize();
        

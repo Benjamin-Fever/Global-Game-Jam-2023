@@ -27,7 +27,7 @@ public class alienLaunch : MonoBehaviour
             if (alienStyles[1].Equals(style)) happy++;
         }
 
-        imageIndexs.Add(0);
+        imageIndexs.Add(alien.imageIndex);
         happyValues.Add(happy);
         alienNames.Add(alien.alienName);
         planetNames.Add(planet.planetName);
@@ -67,6 +67,7 @@ public class alienLaunch : MonoBehaviour
         for(int i = 0; i < finishedTimers.Count; i++)
         {
             int index = finishedTimers[i];
+
             mailTimers.RemoveAt(index);
             imageIndexs.RemoveAt(index);
             happyValues.RemoveAt(index);
