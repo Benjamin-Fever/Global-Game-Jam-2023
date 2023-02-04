@@ -29,18 +29,14 @@ public class SpaceMail : MonoBehaviour
         canvasGroup.blocksRaycasts = false;
         currentMail= new List<Sprite>();
         initButtons();
-        generateMail(10);
         loadMailImage();
         reloadProgress();
+        alienLaunch.spaceMail = this;
     }
 
-    public void generateMail(int amount)
+    public void generateMail(string alienName, string planetName, int imageIndex, int happyValue)
     {
-        for (int i = 0; i < amount; i++)
-        {
-            int randomMailInt = Mathf.RoundToInt(Random.value * (mailSprites.Count - 1));
-            currentMail.Insert(0, mailSprites[randomMailInt]);
-        }
+        currentMail.Insert(0, mailSprites[imageIndex]);
     }
 
     void loadMailImage()
