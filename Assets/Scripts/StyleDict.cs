@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StyleDict : MonoBehaviour
 {
@@ -29,6 +30,7 @@ public class StyleDict : MonoBehaviour
     void Awake()
     {
         initStyles();
+        initScenes();
     }
 
     private void Start()
@@ -245,5 +247,12 @@ public class StyleDict : MonoBehaviour
             " V",
             " VI",
         };
+    }
+    public void initScenes()
+    {
+        SceneManager.LoadScene(1, LoadSceneMode.Additive);
+        SceneManager.LoadScene(2, LoadSceneMode.Additive);
+        SceneManager.LoadScene(3, LoadSceneMode.Additive);
+        SceneManager.LoadScene(4, LoadSceneMode.Additive);
     }
 }
