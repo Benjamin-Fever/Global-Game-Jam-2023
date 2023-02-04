@@ -246,6 +246,5 @@ public class StyleDict : MonoBehaviour
             " V",
             " VI",
         };
-    }
 
 }
