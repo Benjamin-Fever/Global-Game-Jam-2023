@@ -3,19 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class Planet : MonoBehaviour
 {
     public GameObject PlanetPopup;
     public TextMeshProUGUI planetNameLabel;
     public TextMeshProUGUI planetStyleLabel;
-    public GameObject PlanetImage;
-
-    public int styleRangeMin = 2;
-    public int styleRangeMax = 6;
-
-    public List<string> planetNamePrefix = new List<string>() { "pre1", "pre2", "pre3", "pre4" };
-    public List<string> planetNameSuffix = new List<string>() { "suf1", "suf2", "suf3", "suf4" };
+    public Button galaxyButton;
+    public List<Sprite> spriteSheet;
+    public Image atmosphereImage;
+    public Image planetImage;
+    public Image extraImage;
 
     private List<StyleDict.Style> styles = new List<StyleDict.Style>();
     private string planetName;
@@ -29,21 +28,25 @@ public class Planet : MonoBehaviour
     public void galaxyClick()
     {
         PlanetPopup.SetActive(true);
+        Debug.Log("hello?");
+        galaxyButton.interactable = false;
+        Debug.Log("hello??????????");
         generate();
     }
 
     public void minmizeClick()
     {
         PlanetPopup.SetActive(false);
+        galaxyButton.interactable = true;
     }
 
     public void generate()
     {
-        
+        generatePlanetImage();
         // Randomize Styles
         planetName = StyleDict.planetPrefix[Random.Range(0, StyleDict.planetPrefix.Count)] + StyleDict.planetSuffix[Random.Range(0, StyleDict.planetSuffix.Count)];
         styles = new List<StyleDict.Style>();
-        int count = Random.Range(styleRangeMin, styleRangeMax+1);
+        int count = 2;
         StyleDict.Style style = StyleDict.planetStyles.Values.ToList()[Random.Range(0, StyleDict.planetStyles.Values.ToList().Count)];
         for (int i = 0; i < count; i++)
         {
@@ -77,5 +80,12 @@ public class Planet : MonoBehaviour
             text += keys[Random.Range(0, keys.Count)] + "\n";
         }
         planetStyleLabel.text = text;
+    }
+
+    public void generatePlanetImage()
+    {
+        atmosphereImage.sprite = spriteSheet[Random.Range(0, 3)];
+        planetImage.sprite = spriteSheet[Random.Range(3, 6)];
+        extraImage.sprite = spriteSheet[Random.Range(6, 9)];
     }
 }
