@@ -11,7 +11,9 @@ public class StyleDict : MonoBehaviour
     public static Dictionary<string, Style> planetStyles;
     public static List<string> firstNames;
     public static List<string> lastNames;
-    
+    public static List<string> planetPrefix;
+    public static List<string> planetSuffix;
+
 
     public enum Style
     {
@@ -115,6 +117,16 @@ public class StyleDict : MonoBehaviour
             "Ru",
             "Quadragop",
         };
-    }
+
+        planetPrefix = new List<string>()
+        {
+            "Prefix1"
+        };
+
+        planetSuffix = new List<string>()
+        {
+            "suffix1"
+        };
+}
     
 }
