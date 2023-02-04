@@ -20,10 +20,12 @@ public class SpaceMail : MonoBehaviour
     public Button incinerateButton;
     public Button close;
     public Button open;
+    public CanvasGroup canvasGroup;
     
     // Start is called before the first frame update
     void Start()
     {
+        canvasGroup.alpha = 0f;
         currentMail= new List<Sprite>();
         initButtons();
         generateMail(10);
@@ -96,12 +98,13 @@ public class SpaceMail : MonoBehaviour
 
     void closeWindow()
     {
-
+        canvasGroup.alpha = 0;
     }
 
     void openWindow()
     {
-
+        canvasGroup.alpha = 1;
+        position = 0;
     }
 
     void initButtons()
@@ -111,5 +114,6 @@ public class SpaceMail : MonoBehaviour
         incinerateButton.onClick.AddListener(incinerate);
         replyButton.onClick.AddListener(reply);
         close.onClick.AddListener(closeWindow);
+        open.onClick.AddListener(openWindow);
     }
 }
