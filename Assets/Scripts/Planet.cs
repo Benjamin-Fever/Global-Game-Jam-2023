@@ -16,8 +16,8 @@ public class Planet : MonoBehaviour
     public Image planetImage;
     public Image extraImage;
 
-    private List<StyleDict.Style> styles = new List<StyleDict.Style>();
-    private string planetName;
+    public List<StyleDict.Style> styles = new List<StyleDict.Style>();
+    public string planetName;
 
     private void Start()
     {
@@ -28,9 +28,7 @@ public class Planet : MonoBehaviour
     public void galaxyClick()
     {
         PlanetPopup.SetActive(true);
-        Debug.Log("hello?");
         galaxyButton.interactable = false;
-        Debug.Log("hello??????????");
         generate();
     }
 
@@ -80,6 +78,7 @@ public class Planet : MonoBehaviour
             text += keys[Random.Range(0, keys.Count)] + "\n";
         }
         planetStyleLabel.text = text;
+        alienLaunch.planet = this;
     }
 
     public void generatePlanetImage()
