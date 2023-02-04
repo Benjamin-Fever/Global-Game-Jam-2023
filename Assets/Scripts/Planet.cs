@@ -66,9 +66,9 @@ public class Planet : MonoBehaviour
         planetNameLabel.text = planetName;
         
         string text = "";
-        List<string> keys = new List<string>();
         for (int i = 0; i < styles.Count; i++)
         {
+            List<string> keys = new List<string>();
             foreach (KeyValuePair<string, StyleDict.Style> entry in StyleDict.planetStyles)
             {
                 if (styles[i].Equals(entry.Value)){

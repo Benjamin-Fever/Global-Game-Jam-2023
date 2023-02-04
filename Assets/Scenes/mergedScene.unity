@@ -259,8 +259,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< Updated upstream
-=======
 --- !u!1001 &1879531846
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -320,6 +318,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
+
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1488901487594845433, guid: 3a999c3d4ee6b004e89d84ecfb2b6ec9, type: 3}
       insertIndex: -1
@@ -342,4 +341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fb8cb7955aabee49898a8351cdb60e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
->>>>>>> Stashed changes
+
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3a999c3d4ee6b004e89d84ecfb2b6ec9, type: 3}
+

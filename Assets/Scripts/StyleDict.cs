@@ -30,6 +30,7 @@ public class StyleDict : MonoBehaviour
     void Awake()
     {
         initStyles();
+        initScenes();
     }
 
     private void Start()
@@ -247,8 +248,11 @@ public class StyleDict : MonoBehaviour
             " VI",
         };
     }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
+    public void initScenes()
+    {
+        SceneManager.LoadScene(1, LoadSceneMode.Additive);
+        SceneManager.LoadScene(2, LoadSceneMode.Additive);
+        SceneManager.LoadScene(3, LoadSceneMode.Additive);
+        SceneManager.LoadScene(4, LoadSceneMode.Additive);
+    }
 }

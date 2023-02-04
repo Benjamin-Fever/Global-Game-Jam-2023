@@ -9,14 +9,22 @@ public class Alien : MonoBehaviour
 {
 
     public string alienName;
+    public string firstName;
+    public string lastName;
     public AlienNameTag namePlate;
-    public GameObject picture;
-    public DetailsSection detailsSection;
+    public DetailsSection alienInfo;
     public List<StyleDict.Style> selectedStyles;
-    public List<string> firstNames;
-    public List<string> lastNames;
-    public int numStyles;
+    public Image alienImage;
+    private int numStyles;
+    public int imageIndex; // Which alien sprite was picked.
+    //public Button generate; //Debug purposes
 
+    //Previous values so there is no repeated values in new aliens
+    public string previousFirstName;
+    public string previousLastName;
+    public List<StyleDict.Style> previousStyles;
+    public int previousImageIndex;
+    private bool firstAlien;
 
 
     //Needs to be filled in editor
@@ -25,77 +33,99 @@ public class Alien : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        initPreferenceOptions();
-        Generate();
-    }
+        //Send reference so spaceMail can retrieve sprites
+        SpaceMail.alienObject = this;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        numStyles = 1;
+        firstAlien = true;
+        Generate();
+        //generate.onClick.AddListener(Generate);
     }
 
     //Generates a new alien, seeing as we only have 1 alien, this function just chnages the fields of the alien class.
     public void Generate()
     {
         //Generate name
-        int randFirstName = Mathf.RoundToInt(Random.value * (firstNames.Count -1));
-        int randLastName = Mathf.RoundToInt(Random.value * (lastNames.Count - 1));
-        alienName = firstNames[randFirstName] + " " + lastNames[randLastName];
+        int randFirstName = Mathf.RoundToInt(Random.value * (StyleDict.firstNames.Count -1));
+        int randLastName = Mathf.RoundToInt(Random.value * (StyleDict.lastNames.Count - 1));
+        firstName = StyleDict.firstNames[randFirstName];
+        lastName = StyleDict.lastNames[randLastName];
+
+        //Remove repeats
+        while (firstName == previousFirstName)
+        {
+            randFirstName = Mathf.RoundToInt(Random.value * (StyleDict.firstNames.Count - 1));
+            firstName = StyleDict.firstNames[randFirstName];
+        }
+        while (lastName == previousLastName)
+        {
+            randLastName = Mathf.RoundToInt(Random.value * (StyleDict.lastNames.Count - 1));
+            lastName = StyleDict.lastNames[randLastName];
+        }
+
+        alienName = firstName + " " + lastName;
         namePlate.nameTag.text = alienName;
 
         //GeneratePicture
         int randImage = Mathf.RoundToInt(Random.value * (images.Count - 1));
-        picture.GetComponent<Image>().sprite = images[randImage];
+
+        //Remove repeats
+        while (randImage == previousImageIndex)
+        {
+            randImage = Mathf.RoundToInt(Random.value * (images.Count - 1));
+        }
+        imageIndex = randImage;
+        alienImage.sprite = images[randImage];
+        alienImage.SetNativeSize();
 
         selectedStyles = new List<StyleDict.Style>();
 
-        //Generate random preferences.
-        for(int i = 0; i < numStyles; i++)
+        alienInfo.alienStyles.text = firstName + " Says:\n\n";
+
+        //Generate random Alien Style.
+        for (int i = 0; i < numStyles; i++)
         {
-            int randStyle = Mathf.RoundToInt(Random.value * (StyleDict.alienStyles.Count - 1));
-            StyleDict.Style selectedStyle = StyleDict.alienStyles.Values.ToList()[randStyle];
-            while (selectedStyles.Contains(selectedStyle))
+            if (StyleDict.alienStyles.Any())
             {
-                randStyle = Mathf.RoundToInt(Random.value * (StyleDict.alienStyles.Count - 1));
-                selectedStyle = StyleDict.alienStyles.Values.ToList()[randStyle];
+                int randStyle = Mathf.RoundToInt(Random.value * (StyleDict.alienStyles.Count - 1));
+                StyleDict.Style selectedStyle = StyleDict.alienStyles.Values.ToList()[randStyle];
+                while (selectedStyles.Contains(selectedStyle) || previousStyles.Contains(selectedStyle))
+                {
+                    randStyle = Mathf.RoundToInt(Random.value * (StyleDict.alienStyles.Count - 1));
+                    selectedStyle = StyleDict.alienStyles.Values.ToList()[randStyle];
+                }
+                selectedStyles.Add(selectedStyle);
+
+
+                alienInfo.alienStyles.text += StyleDict.alienStyles.Keys.ToList()[randStyle] + "\n\n";
             }
-            selectedStyles.Add(selectedStyle);
-
-
-            detailsSection.styles.text += StyleDict.alienStyles.Keys.ToList()[randStyle] + "\n\n";
         }
         
-    }
-
-    //
-    void initPreferenceOptions()
-    {
-        numStyles = 2;
-
-        firstNames = new List<string>()
+        //Generate random species style
+        alienInfo.speciesStyles.text = "Species Profile:\n\n";
+        for (int i = 0; i < numStyles; i++)
         {
-            "Grimbul",
-            "Wendy",
-            "Slugrup",
-            "Ingurt",
-            "Yeplib",
-            "Bugry",
-            "Limbol",
-            "Shery",
-        };
+            if (StyleDict.speciesStyles.Any())
+            {
+                int randStyle = Mathf.RoundToInt(Random.value * (StyleDict.speciesStyles.Count - 1));
+                StyleDict.Style selectedStyle = StyleDict.speciesStyles.Values.ToList()[randStyle];
+                while (selectedStyles.Contains(selectedStyle) || previousStyles.Contains(selectedStyle))
+                {
+                    randStyle = Mathf.RoundToInt(Random.value * (StyleDict.alienStyles.Count - 1));
+                    selectedStyle = StyleDict.alienStyles.Values.ToList()[randStyle];
+                }
+                selectedStyles.Add(selectedStyle);
 
-        lastNames = new List<string>()
+                alienInfo.speciesStyles.text += StyleDict.speciesStyles.Keys.ToList()[randStyle] + "\n\n";
+            }
+        }
+        alienLaunch.alien = this;
+        if (firstAlien)
         {
-            "Gumptur",
-            "Rigbog",
-            "Portund",
-            "Etryop",
-            "Dumgil",
-            "Vutyred",
-            "Mundy",
-            "Ru",
-            "Quadragop",
-        };
+            previousFirstName = firstName;
+            previousLastName = lastName;
+            previousStyles = selectedStyles;
+            previousImageIndex = imageIndex;
+        }
     }
 }
