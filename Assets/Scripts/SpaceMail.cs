@@ -26,6 +26,7 @@ public class SpaceMail : MonoBehaviour
     void Start()
     {
         canvasGroup.alpha = 0f;
+        canvasGroup.blocksRaycasts = false;
         currentMail= new List<Sprite>();
         initButtons();
         generateMail(10);
@@ -99,12 +100,14 @@ public class SpaceMail : MonoBehaviour
     void closeWindow()
     {
         canvasGroup.alpha = 0;
+        canvasGroup.blocksRaycasts = false;
     }
 
     void openWindow()
     {
         canvasGroup.alpha = 1;
         position = 0;
+        canvasGroup.blocksRaycasts = true;
     }
 
     void initButtons()
