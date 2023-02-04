@@ -63,7 +63,7 @@ public class SpaceMail : MonoBehaviour
         }
         else
         {
-            progress.text = "0 of 0P";
+            progress.text = "0 of 0";
         }
     }
 
