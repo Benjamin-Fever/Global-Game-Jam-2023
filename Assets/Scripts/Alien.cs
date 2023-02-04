@@ -17,6 +17,7 @@ public class Alien : MonoBehaviour
     public Image alienImage;
     private int numStyles;
     public int imageIndex; // Which alien sprite was picked.
+    //public Button generate; //Debug purposes
 
     //Previous values so there is no repeated values in new aliens
     public string previousFirstName;
@@ -29,23 +30,16 @@ public class Alien : MonoBehaviour
     //Needs to be filled in editor
     public List<Sprite> images;
 
-
-    private void Awake()
-    {
-        DontDestroyOnLoad(this.gameObject);
-    }
     // Start is called before the first frame update
     void Start()
     {
+        //Send reference so spaceMail can retrieve sprites
+        SpaceMail.alienObject = this;
+
         numStyles = 1;
         firstAlien = true;
         Generate();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        //generate.onClick.AddListener(Generate);
     }
 
     //Generates a new alien, seeing as we only have 1 alien, this function just chnages the fields of the alien class.
@@ -60,10 +54,12 @@ public class Alien : MonoBehaviour
         //Remove repeats
         while (firstName == previousFirstName)
         {
+            randFirstName = Mathf.RoundToInt(Random.value * (StyleDict.firstNames.Count - 1));
             firstName = StyleDict.firstNames[randFirstName];
         }
         while (lastName == previousLastName)
         {
+            randLastName = Mathf.RoundToInt(Random.value * (StyleDict.lastNames.Count - 1));
             lastName = StyleDict.lastNames[randLastName];
         }
 
@@ -81,7 +77,6 @@ public class Alien : MonoBehaviour
         imageIndex = randImage;
         alienImage.sprite = images[randImage];
         alienImage.SetNativeSize();
-
 
         selectedStyles = new List<StyleDict.Style>();
 
@@ -105,7 +100,7 @@ public class Alien : MonoBehaviour
                 alienInfo.alienStyles.text += StyleDict.alienStyles.Keys.ToList()[randStyle] + "\n\n";
             }
         }
-
+        
         //Generate random species style
         alienInfo.speciesStyles.text = "Species Profile:\n\n";
         for (int i = 0; i < numStyles; i++)

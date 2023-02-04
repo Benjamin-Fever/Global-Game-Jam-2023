@@ -10,6 +10,9 @@ public class SpaceMail : MonoBehaviour
 
     public int position;
     public List<Sprite> mailSprites;
+    public List<Sprite> stamps;
+    public List<int> alienIndexes;
+    public List<int> alienHappiness;
     public List<Sprite> currentMail;
     public Sprite noMailSprite;
     public TextMeshProUGUI progress;
@@ -22,14 +25,15 @@ public class SpaceMail : MonoBehaviour
     public Button close2;
     public Button open;
     public CanvasGroup canvasGroup;
-    public List<Sprite> alienSprites;
-    
+    public Image alien;
+    public Image stamp;
+    public static Alien alienObject;
     // Start is called before the first frame update
     void Start()
     {
         canvasGroup.alpha = 0f;
         canvasGroup.blocksRaycasts = false;
-        currentMail= new List<Sprite>();
+        currentMail = new List<Sprite>();
         initButtons();
         loadMailImage();
         reloadProgress();
@@ -38,7 +42,10 @@ public class SpaceMail : MonoBehaviour
 
     public void generateMail(string alienName, string planetName, int imageIndex, int happyValue)
     {
-        currentMail.Insert(0, mailSprites[imageIndex]);
+        currentMail.Insert(0, mailSprites[Mathf.RoundToInt(Random.value * (mailSprites.Count -1))]);
+        alienIndexes.Insert(0, imageIndex);
+        alienHappiness.Insert(0, happyValue);
+
         reloadProgress();
         loadMailImage();
     }
@@ -48,9 +55,21 @@ public class SpaceMail : MonoBehaviour
         if (currentMail.Any())
         {
             mailImage.sprite = currentMail[position];
+            if (alienHappiness[position] > 0)
+            {
+                alien.sprite = alienObject.images[alienIndexes[position]];
+                alien.color = new Color(255, 255, 255, 1);
+            }
+            else
+            {
+                alien.color = new Color(255, 255, 255, 0);
+            }
+
+            // stamp.sprite = stamps[alienHappiness[position]];
         }
         else
         {
+            alien.color = new Color(255, 255, 255, 0);
             mailImage.sprite = noMailSprite;
         }
     }
