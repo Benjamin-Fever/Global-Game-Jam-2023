@@ -247,8 +247,4 @@ public class StyleDict : MonoBehaviour
             " VI",
         };
     }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 }
