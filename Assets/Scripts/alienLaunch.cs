@@ -31,11 +31,10 @@ public class alienLaunch : MonoBehaviour
         happyValues.Add(happy);
         alienNames.Add(alien.alienName);
         planetNames.Add(planet.planetName);
-        mailTimers.Add(Random.value * 50 + 10); //Add a timer ranging from 10 seconds to a minute
+        mailTimers.Add(Random.value * 0 + 10); //Add a timer ranging from 10 seconds to a minute
 
         alien.Generate();
         planet.minmizeClick();
-        
     }
 
     //Countdown mail timers and send mail when each one ends.
