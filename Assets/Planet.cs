@@ -39,8 +39,9 @@ public class Planet : MonoBehaviour
 
     public void generate()
     {
+        
         // Randomize Styles
-        planetName = planetNamePrefix[Random.Range(0, planetNamePrefix.Count)] + planetNameSuffix[Random.Range(0, planetNameSuffix.Count)];
+        planetName = StyleDict.planetPrefix[Random.Range(0, StyleDict.planetPrefix.Count)] + StyleDict.planetSuffix[Random.Range(0, StyleDict.planetSuffix.Count)];
         styles = new List<StyleDict.Style>();
         int count = Random.Range(styleRangeMin, styleRangeMax+1);
         StyleDict.Style style = StyleDict.planetStyles.Values.ToList()[Random.Range(0, StyleDict.planetStyles.Values.ToList().Count)];

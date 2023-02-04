@@ -9,6 +9,13 @@ public class StyleDict : MonoBehaviour
     public static Dictionary<string, Style> alienStyles;
     public static Dictionary<string, Style> speciesStyles;
     public static Dictionary<string, Style> planetStyles;
+<<<<<<< Updated upstream
+=======
+    public static List<string> firstNames;
+    public static List<string> lastNames;
+    public static List<string> planetPrefix;
+    public static List<string> planetSuffix;
+>>>>>>> Stashed changes
 
     public enum Style
     {
@@ -88,6 +95,43 @@ public class StyleDict : MonoBehaviour
             {"Home of the Endless Lettuce. Nothing has ever managed to consume more lettuce than has grown in the same time.", Style.Herbivore }
         };
 
+<<<<<<< Updated upstream
+=======
+        firstNames = new List<string>()
+        {
+            "Grimbul",
+            "Wendy",
+            "Slugrup",
+            "Ingurt",
+            "Yeplib",
+            "Bugry",
+            "Limbol",
+            "Shery",
+        };
+
+        lastNames = new List<string>()
+        {
+            "Gumptur",
+            "Rigbog",
+            "Portund",
+            "Etryop",
+            "Dumgil",
+            "Vutyred",
+            "Mundy",
+            "Ru",
+            "Quadragop",
+        };
+
+        planetPrefix = new List<string>()
+        {
+            "PlanetPrefix1",
+        };
+
+        planetSuffix = new List<string>()
+        {
+            "PlanetSufix1",
+        };
+>>>>>>> Stashed changes
     }
     
 }
