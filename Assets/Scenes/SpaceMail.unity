@@ -304,8 +304,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 7 of 10
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1aada06014980754d9c6eef215c67617, type: 2}
+  m_sharedMaterial: {fileID: -6228868989990287586, guid: 1aada06014980754d9c6eef215c67617, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -495,6 +495,7 @@ MonoBehaviour:
   close2: {fileID: 610307696}
   open: {fileID: 1409182654}
   canvasGroup: {fileID: 404248440}
+  alienSprites: []
 --- !u!225 &404248440
 CanvasGroup:
   m_ObjectHideFlags: 0
