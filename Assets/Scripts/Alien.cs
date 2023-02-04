@@ -20,6 +20,11 @@ public class Alien : MonoBehaviour
     //Needs to be filled in editor
     public List<Sprite> images;
 
+
+    private void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
+    }
     // Start is called before the first frame update
     void Start()
     {
