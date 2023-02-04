@@ -53,6 +53,7 @@ public class Alien : MonoBehaviour
         int randImage = Mathf.RoundToInt(Random.value * (images.Count - 1));
         alienImage.sprite = images[randImage];
         alienImage.SetNativeSize();
+       
 
         selectedStyles = new List<StyleDict.Style>();
 
