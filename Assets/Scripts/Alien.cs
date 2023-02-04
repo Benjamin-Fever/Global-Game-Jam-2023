@@ -15,8 +15,6 @@ public class Alien : MonoBehaviour
     public GameObject alienImage;
     public DetailsSection alienInfo;
     public List<StyleDict.Style> selectedStyles;
-    public List<string> firstNames;
-    public List<string> lastNames;
     private int numStyles;
 
     //Needs to be filled in editor
@@ -25,7 +23,7 @@ public class Alien : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        initPreferenceOptions();
+        numStyles = 1;
         Generate();
     }
 
@@ -39,10 +37,10 @@ public class Alien : MonoBehaviour
     public void Generate()
     {
         //Generate name
-        int randFirstName = Mathf.RoundToInt(Random.value * (firstNames.Count -1));
-        int randLastName = Mathf.RoundToInt(Random.value * (lastNames.Count - 1));
-        firstName = firstNames[randFirstName];
-        lastName = lastNames[randLastName];
+        int randFirstName = Mathf.RoundToInt(Random.value * (StyleDict.firstNames.Count -1));
+        int randLastName = Mathf.RoundToInt(Random.value * (StyleDict.lastNames.Count - 1));
+        firstName = StyleDict.firstNames[randFirstName];
+        lastName = StyleDict.lastNames[randLastName];
         alienName = firstName + " " + lastName;
         namePlate.nameTag.text = alienName;
 
@@ -73,7 +71,8 @@ public class Alien : MonoBehaviour
             }
         }
 
-        alienInfo.alienStyles.text = "Species Profile:\n\n";
+        //Generate random species style
+        alienInfo.speciesStyles.text = "Species Profile:\n\n";
         for (int i = 0; i < numStyles; i++)
         {
             if (StyleDict.speciesStyles.Any())
@@ -91,36 +90,5 @@ public class Alien : MonoBehaviour
                 alienInfo.speciesStyles.text += StyleDict.speciesStyles.Keys.ToList()[randStyle] + "\n\n";
             }
         }
-    }
-
-    //
-    void initPreferenceOptions()
-    {
-        numStyles = 1;
-
-        firstNames = new List<string>()
-        {
-            "Grimbul",
-            "Wendy",
-            "Slugrup",
-            "Ingurt",
-            "Yeplib",
-            "Bugry",
-            "Limbol",
-            "Shery",
-        };
-
-        lastNames = new List<string>()
-        {
-            "Gumptur",
-            "Rigbog",
-            "Portund",
-            "Etryop",
-            "Dumgil",
-            "Vutyred",
-            "Mundy",
-            "Ru",
-            "Quadragop",
-        };
     }
 }
