@@ -12,9 +12,9 @@ public class Alien : MonoBehaviour
     public string firstName;
     public string lastName;
     public AlienNameTag namePlate;
-    public GameObject alienImage;
     public DetailsSection alienInfo;
     public List<StyleDict.Style> selectedStyles;
+    public Image alienImage;
     private int numStyles;
 
     //Needs to be filled in editor
@@ -51,7 +51,8 @@ public class Alien : MonoBehaviour
 
         //GeneratePicture
         int randImage = Mathf.RoundToInt(Random.value * (images.Count - 1));
-        alienImage.GetComponent<Image>().sprite = images[randImage];
+        alienImage.sprite = images[randImage];
+        alienImage.SetNativeSize();
 
         selectedStyles = new List<StyleDict.Style>();
 
@@ -90,7 +91,6 @@ public class Alien : MonoBehaviour
                     selectedStyle = StyleDict.alienStyles.Values.ToList()[randStyle];
                 }
                 selectedStyles.Add(selectedStyle);
-
 
                 alienInfo.speciesStyles.text += StyleDict.speciesStyles.Keys.ToList()[randStyle] + "\n\n";
             }
