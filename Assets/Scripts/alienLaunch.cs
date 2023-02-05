@@ -31,7 +31,7 @@ public class alienLaunch : MonoBehaviour
         happyValues.Add(happy);
         alienNames.Add(alien.alienName);
         planetNames.Add(planet.planetName);
-        mailTimers.Add(Random.value * 40 + 10); //Add a timer ranging from 10-50 seconds
+        mailTimers.Add(Random.value * 20 + 10); //Add a timer ranging from 10-30 seconds
 
         alien.Generate();
         planet.minmizeClick();

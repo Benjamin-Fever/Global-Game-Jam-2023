@@ -13,7 +13,7 @@ public class StyleDict : MonoBehaviour
     public static List<string> lastNames;
     public static List<string> planetPrefix;
     public static List<string> planetSuffix;
-
+    public static Dictionary<int, List<string>> responses;
 
     public enum Style
     {
@@ -246,6 +246,49 @@ public class StyleDict : MonoBehaviour
             " IV",
             " V",
             " VI",
+        };
+
+        responses = new Dictionary<int, List<string>>()
+        {
+            { 0, new List<string>(){
+                "This place sucks!",
+                "What dump!",
+                "No fun was had",
+                "You ruined my holidays",
+                "I can't live here anymore",
+                "Thanks for nothing",
+                "I've hired another agency",
+                "I'm not mad at you, just dissapointed",
+                "We' just got here and we're moving on",
+                "Get me out of here!!!",
+                "Help! Get me off this planet",
+            }},
+            { 1, new List<string>(){
+                "It's not perfect, but it's home",
+                "My elders always said 'This'll do'",
+                "We'll make the best of it",
+                "I can make it anywhere",
+                "At least it's not Auckland",
+                "I wonder what's on TV here",
+                "It's not ideal, but they deliver here",
+                "Maybe in a few generations, we'll make it work",
+                "My kids won't know any better. It'll do",
+                "She'll be right",
+                "The grass isn't always greener. It isn't always grass.",
+            }},
+            { 2, new List<string>(){
+                "What a lovely dump!",
+                "I'm in heaven",
+                "Thank you, you were my only hope",
+                "Package safely delivered to paradise",
+                "You did well my friend",
+                "Come visit anytime!",
+                "It's so nice here",
+                "=)",
+                "Not too hot, not too cold, but just right",
+                "What a wonderful world",
+                "Pinch me, I must be dreaming"
+            }}
         };
     }
     public void initScenes()
