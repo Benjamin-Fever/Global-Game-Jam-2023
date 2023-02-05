@@ -15,6 +15,7 @@ public class Planet : MonoBehaviour
     public Image atmosphereImage;
     public Image planetImage;
     public Image extraImage;
+    public Scrollbar scroll;
 
     public List<StyleDict.Style> styles = new List<StyleDict.Style>();
     public string planetName;
@@ -28,6 +29,7 @@ public class Planet : MonoBehaviour
     public void galaxyClick()
     {
         PlanetPopup.SetActive(true);
+        scroll.value = 1;
         galaxyButton.interactable = false;
         generate();
     }

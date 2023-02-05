@@ -107,8 +107,8 @@ public class SpaceMail : MonoBehaviour
             AudioController.leftClick();
         }
         position = Mathf.Min(currentMail.Count-1, position + 1);
-        loadMailImage();
         reloadProgress();
+        loadMailImage();    
     }
 
     void prevLetter()
