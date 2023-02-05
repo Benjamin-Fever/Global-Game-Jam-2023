@@ -205,7 +205,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 40150127}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1668046815}
+        m_TargetAssemblyTypeName: AudioController, Assembly-CSharp
+        m_MethodName: leftClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &40150127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -739,7 +751,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 610307697}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1668046815}
+        m_TargetAssemblyTypeName: AudioController, Assembly-CSharp
+        m_MethodName: closeWindow
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &610307697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -860,7 +884,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 763325875}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1668046815}
+        m_TargetAssemblyTypeName: AudioController, Assembly-CSharp
+        m_MethodName: closeWindow
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &763325875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -981,7 +1017,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 836752380}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1668046815}
+        m_TargetAssemblyTypeName: AudioController, Assembly-CSharp
+        m_MethodName: leftClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &836752380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1102,7 +1150,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1260924285}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1668046815}
+        m_TargetAssemblyTypeName: AudioController, Assembly-CSharp
+        m_MethodName: flameEmail
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1260924285
 MonoBehaviour:
   m_ObjectHideFlags: 0
