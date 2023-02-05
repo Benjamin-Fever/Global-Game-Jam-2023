@@ -55,7 +55,7 @@ public class SpaceMail : MonoBehaviour
         if (currentMail.Any())
         {
             mailImage.sprite = currentMail[position];
-            if (alienHappiness[position] > 0)
+            if (alienHappiness[position] >= 0)
             {
                 alien.sprite = alienObject.images[alienIndexes[position]];
                 alien.color = new Color(255, 255, 255, 1);
