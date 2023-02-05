@@ -82,6 +82,8 @@ public class SpaceMail : MonoBehaviour
             alien.color = new Color(255, 255, 255, 0);
             mailImage.sprite = noMailSprite;
             stamp.color = new Color(255, 255, 255, 0);
+            text.text = "";
+
         }
     }
 
