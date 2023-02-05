@@ -29,6 +29,7 @@ public class Alien : MonoBehaviour
 
     //Needs to be filled in editor
     public List<Sprite> images;
+    public List<Sprite> sadImages;
 
     // Start is called before the first frame update
     void Start()
