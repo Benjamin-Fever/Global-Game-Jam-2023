@@ -32,7 +32,9 @@ public class SpaceMail : MonoBehaviour
     public TextMeshProUGUI text;
     public List<string> alienNames;
     public List<string> planets;
-    
+    public bool isOpen;
+    public Sprite notification;
+    public Sprite noNotification;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,11 +45,17 @@ public class SpaceMail : MonoBehaviour
         loadMailImage();
         reloadProgress();
         alienLaunch.spaceMail = this;
+        isOpen = false;
     }
 
     public void generateMail(string alienName, string planetName, int imageIndex, int happyValue)
     {
-        AudioController.emailNotification();
+        if (!isOpen)
+        {
+            AudioController.emailNotification();
+            open.image.sprite = notification;
+        }
+        
         currentMail.Insert(0, mailSprites[Mathf.RoundToInt(Random.value * (mailSprites.Count -1))]);
         alienIndexes.Insert(0, imageIndex);
         alienHappiness.Insert(0, happyValue);
@@ -63,7 +71,14 @@ public class SpaceMail : MonoBehaviour
         if (currentMail.Any())
         {
             mailImage.sprite = currentMail[position];
-            alien.sprite = alienObject.images[alienIndexes[position]];
+            if (alienHappiness[position] > 0)
+            {
+                alien.sprite = alienObject.images[alienIndexes[position]];
+            }
+            else
+            {
+                alien.sprite = alienObject.sadImages[alienIndexes[position]];
+            }
             alien.color = new Color(255, 255, 255, 1);
             stamp.color = new Color(255, 255, 255, 1);
             stamp.sprite = stamps[alienHappiness[position]];
@@ -173,6 +188,7 @@ public class SpaceMail : MonoBehaviour
         canvasGroup.alpha = 0;
         canvasGroup.blocksRaycasts = false;
         AudioController.closeWindow();
+        isOpen = false;
     }
 
     void openWindow()
@@ -180,6 +196,8 @@ public class SpaceMail : MonoBehaviour
         canvasGroup.alpha = 1;
         position = 0;
         canvasGroup.blocksRaycasts = true;
+        isOpen = true;
+        open.image.sprite = noNotification;
     }
 
     void initButtons()

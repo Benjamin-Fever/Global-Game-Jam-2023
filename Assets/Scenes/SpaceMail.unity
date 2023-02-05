@@ -657,6 +657,9 @@ MonoBehaviour:
   text: {fileID: 1690965852}
   alienNames: []
   planets: []
+  isOpen: 0
+  notification: {fileID: -1364018527, guid: 1bcc8248752457647821ea54dc2db46c, type: 3}
+  noNotification: {fileID: -750743129, guid: 1bcc8248752457647821ea54dc2db46c, type: 3}
 --- !u!225 &404248440
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1452,8 +1455,8 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: -145215369, guid: 9956910ee0374134fb6bc4c9d7ffa0ce, type: 3}
-    m_PressedSprite: {fileID: -145215369, guid: 9956910ee0374134fb6bc4c9d7ffa0ce, type: 3}
+    m_HighlightedSprite: {fileID: -1214187910, guid: 1bcc8248752457647821ea54dc2db46c, type: 3}
+    m_PressedSprite: {fileID: -1214187910, guid: 1bcc8248752457647821ea54dc2db46c, type: 3}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
@@ -1499,7 +1502,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -368700527, guid: 9956910ee0374134fb6bc4c9d7ffa0ce, type: 3}
+  m_Sprite: {fileID: -750743129, guid: 1bcc8248752457647821ea54dc2db46c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
