@@ -28,6 +28,10 @@ public class SpaceMail : MonoBehaviour
     public Image alien;
     public Image stamp;
     public static Alien alienObject;
+    public List<string> responses;
+    public TextMeshProUGUI text;
+    public List<string> alienNames;
+    public List<string> planets;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,7 +49,9 @@ public class SpaceMail : MonoBehaviour
         currentMail.Insert(0, mailSprites[Mathf.RoundToInt(Random.value * (mailSprites.Count -1))]);
         alienIndexes.Insert(0, imageIndex);
         alienHappiness.Insert(0, happyValue);
-
+        alienNames.Insert(0, alienName);
+        planets.Insert(0, planetName);
+        responses.Insert(0, StyleDict.responses[happyValue][Mathf.RoundToInt(Random.value * (StyleDict.responses[happyValue].Count - 1))]);
         reloadProgress();
         loadMailImage();
     }
@@ -55,7 +61,7 @@ public class SpaceMail : MonoBehaviour
         if (currentMail.Any())
         {
             mailImage.sprite = currentMail[position];
-            if (alienHappiness[position] >= 0)
+            if (alienHappiness[position] > 0)
             {
                 alien.sprite = alienObject.images[alienIndexes[position]];
                 alien.color = new Color(255, 255, 255, 1);
@@ -64,13 +70,18 @@ public class SpaceMail : MonoBehaviour
             {
                 alien.color = new Color(255, 255, 255, 0);
             }
-
-            // stamp.sprite = stamps[alienHappiness[position]];
+            stamp.color = new Color(255, 255, 255, 1);
+            stamp.sprite = stamps[alienHappiness[position]];
+            text.text = "";
+            text.text = "From Planet " + planets[position] + ":\n\n";
+            text.text += responses[position] + "\n\n";
+            text.text += "Sincerely, " + alienNames[position];
         }
         else
         {
             alien.color = new Color(255, 255, 255, 0);
             mailImage.sprite = noMailSprite;
+            stamp.color = new Color(255, 255, 255, 0);
         }
     }
 
@@ -88,6 +99,10 @@ public class SpaceMail : MonoBehaviour
 
     void nextLetter()
     {
+        if (!currentMail.Any())
+        {
+            return;
+        }
         position = Mathf.Min(currentMail.Count-1, position + 1);
         loadMailImage();
         reloadProgress();
