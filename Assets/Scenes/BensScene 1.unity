@@ -491,7 +491,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 797897550}
         m_TargetAssemblyTypeName: AudioController, Assembly-CSharp
-        m_MethodName: leftClick
+        m_MethodName: closeWindow
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -568,7 +568,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 581710679}
   - {fileID: 1578664229}
   m_Father: {fileID: 1231953734}
   m_RootOrder: -1
@@ -644,7 +643,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1869958461, guid: edc51042c2b329c4aa44f619c9b5f0ab, type: 3}
+  m_Sprite: {fileID: -1385241224, guid: 0bda4ac4e6c540f4f86c69ac97f218a1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -661,139 +660,6 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 556961182}
-  m_CullTransparentMesh: 1
---- !u!1 &581710678
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 581710679}
-  - component: {fileID: 581710682}
-  - component: {fileID: 581710681}
-  - component: {fileID: 581710680}
-  m_Layer: 5
-  m_Name: StartButton
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &581710679
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 581710678}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 433065982}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 10, y: 4.0482}
-  m_SizeDelta: {x: 250, y: 61}
-  m_Pivot: {x: 0, y: 0}
---- !u!114 &581710680
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 581710678}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 2
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: -1560542745, guid: 277b73817fd3b624fb5b33402e93bd40, type: 3}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 581710681}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 797897550}
-        m_TargetAssemblyTypeName: AudioController, Assembly-CSharp
-        m_MethodName: leftClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &581710681
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 581710678}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.7960785, g: 0.8117648, b: 0.8117648, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: -687160790, guid: 277b73817fd3b624fb5b33402e93bd40, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &581710682
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 581710678}
   m_CullTransparentMesh: 1
 --- !u!1 &734295132
 GameObject:
@@ -893,7 +759,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 797897550}
         m_TargetAssemblyTypeName: AudioController, Assembly-CSharp
-        m_MethodName: leftClick
+        m_MethodName: closeWindow
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1311,15 +1177,15 @@ MonoBehaviour:
   planetStyleLabel: {fileID: 20667005}
   galaxyButton: {fileID: 1671988139}
   spriteSheet:
-  - {fileID: -1869958461, guid: edc51042c2b329c4aa44f619c9b5f0ab, type: 3}
-  - {fileID: 1418622334, guid: edc51042c2b329c4aa44f619c9b5f0ab, type: 3}
-  - {fileID: 1373282554, guid: edc51042c2b329c4aa44f619c9b5f0ab, type: 3}
-  - {fileID: -2121509621, guid: edc51042c2b329c4aa44f619c9b5f0ab, type: 3}
-  - {fileID: -1994406190, guid: edc51042c2b329c4aa44f619c9b5f0ab, type: 3}
-  - {fileID: -2064598668, guid: edc51042c2b329c4aa44f619c9b5f0ab, type: 3}
-  - {fileID: 1484348356, guid: edc51042c2b329c4aa44f619c9b5f0ab, type: 3}
-  - {fileID: -1253412921, guid: edc51042c2b329c4aa44f619c9b5f0ab, type: 3}
-  - {fileID: 26187080, guid: edc51042c2b329c4aa44f619c9b5f0ab, type: 3}
+  - {fileID: -1385241224, guid: 0bda4ac4e6c540f4f86c69ac97f218a1, type: 3}
+  - {fileID: 289477021, guid: 0bda4ac4e6c540f4f86c69ac97f218a1, type: 3}
+  - {fileID: 863402727, guid: 0bda4ac4e6c540f4f86c69ac97f218a1, type: 3}
+  - {fileID: 1112419503, guid: 0bda4ac4e6c540f4f86c69ac97f218a1, type: 3}
+  - {fileID: 187253039, guid: 0bda4ac4e6c540f4f86c69ac97f218a1, type: 3}
+  - {fileID: 2001427436, guid: 0bda4ac4e6c540f4f86c69ac97f218a1, type: 3}
+  - {fileID: 1818929004, guid: 0bda4ac4e6c540f4f86c69ac97f218a1, type: 3}
+  - {fileID: -115090779, guid: 0bda4ac4e6c540f4f86c69ac97f218a1, type: 3}
+  - {fileID: 1949744321, guid: 0bda4ac4e6c540f4f86c69ac97f218a1, type: 3}
   atmosphereImage: {fileID: 556961184}
   planetImage: {fileID: 1330905392}
   extraImage: {fileID: 1330318279}
@@ -1645,7 +1511,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1253412921, guid: edc51042c2b329c4aa44f619c9b5f0ab, type: 3}
+  m_Sprite: {fileID: 1818929004, guid: 0bda4ac4e6c540f4f86c69ac97f218a1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1721,7 +1587,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -2064598668, guid: edc51042c2b329c4aa44f619c9b5f0ab, type: 3}
+  m_Sprite: {fileID: 187253039, guid: 0bda4ac4e6c540f4f86c69ac97f218a1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2216,6 +2082,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 797897550}
+        m_TargetAssemblyTypeName: AudioController, Assembly-CSharp
+        m_MethodName: leftClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1578664231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2328,18 +2206,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1671988137}
-  m_LocalRotation: {x: -0, y: -0, z: 0.28087264, w: -0.95974505}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1173009019}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -32.625}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 24.199, y: 7.601}
-  m_SizeDelta: {x: 504.6776, y: 333.545}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1671988139
 MonoBehaviour:
@@ -2388,6 +2266,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1173009022}
         m_TargetAssemblyTypeName: Planet, Assembly-CSharp
         m_MethodName: galaxyClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 797897550}
+        m_TargetAssemblyTypeName: AudioController, Assembly-CSharp
+        m_MethodName: leftClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
