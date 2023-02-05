@@ -133,8 +133,8 @@ public class SpaceMail : MonoBehaviour
         {
             return;
         }
-        currentMail.RemoveAt(position);
-        if(position == currentMail.Count && position != 0)
+        removeEmail(position);
+        if (position == currentMail.Count && position != 0)
         {
             position--;
         }
@@ -143,9 +143,29 @@ public class SpaceMail : MonoBehaviour
         reloadProgress();
     }
 
+    public void removeEmail(int position)
+    {
+        currentMail.RemoveAt(position);
+        alienHappiness.RemoveAt(position);
+        alienIndexes.RemoveAt(position);
+        responses.RemoveAt(position);
+        alienNames.RemoveAt(position);
+        planets.RemoveAt(position);
+    }
     void reply()
     {
-        //Maybe do this maybe not
+        if (!currentMail.Any())
+        {
+            return;
+        }
+        removeEmail(position);
+        if (position == currentMail.Count && position != 0)
+        {
+            position--;
+        }
+        AudioController.leftClick();
+        loadMailImage();
+        reloadProgress();
     }
 
     void closeWindow()
