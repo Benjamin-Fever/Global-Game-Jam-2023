@@ -68,9 +68,9 @@ public class SpaceMail : MonoBehaviour
             stamp.color = new Color(255, 255, 255, 1);
             stamp.sprite = stamps[alienHappiness[position]];
             text.text = "";
-            text.text = "From Planet " + planets[position] + ":\n\n";
+            text.text = "Planet " + planets[position] + ":\n\n";
             text.text += responses[position] + "\n\n";
-            text.text += "Sincerely, " + alienNames[position];
+            text.text += "Best, " + alienNames[position];
             noMailText.text = "";
         }
         else
