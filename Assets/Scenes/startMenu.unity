@@ -394,7 +394,7 @@ MonoBehaviour:
     is to find new homes for galactic migrants. Our database has over 8,923,351,628,423,258
     planets and counting.\t\t\t\t\r\t\t\t\r\nAliens will come to you for relocation.
     They will talk to you and you will have a chance to read their profiles. Empathize
-    with them. Think hard about what they need to live a good life somewhere else.\t\t\t\t\r\t\t\r\nYou
+    with them. Think hard about what they need to live a good life somewhere else.\t\n\t\t\t\r\t\t\r\nYou
     must scan the cosmos, one planet at a time, until you find their new perfect
     home. Click anywhere on the galaxy to bring up a planet profile. Find the planet
     of their dreams. Launch the aliens towards their new life.\t\t\t\t\r\n\t\t\t\t\r\nWe
@@ -427,7 +427,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30.95
+  m_fontSize: 29.6
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
